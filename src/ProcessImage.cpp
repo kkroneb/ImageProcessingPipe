@@ -15,7 +15,7 @@ void processImagesInDirectory(const boost::filesystem::path& directory) {
     for (const auto& entry : boost::filesystem::directory_iterator(directory)) {
         // Check if the entry is a regular file and has a supported image extension
         if (boost::filesystem::is_regular_file(entry) && 
-            (entry.path().extension() == ".jpg" || entry.path().extension() == ".png")) {
+            (entry.path().extension() == ".jpg" || entry.path().extension() == ".png" || entry.path().extension() == ".jpeg")) {
 
             // Read the image from the entry
             cv::Mat image = readImage(entry.path());
@@ -29,11 +29,15 @@ void processImagesInDirectory(const boost::filesystem::path& directory) {
             boost::filesystem::path outputDir("output");
 
             // does output directory exist? - if not --> create
-            if (!boost::filesystem::exists(outputDir)) boost::filesystem::create_directory(outputDir);
+            if (!boost::filesystem::exists(outputDir)){
+                cout << "Target Directory didn't exist." << endl;
+                boost::filesystem::create_directory(outputDir);
+            } 
 
             // Save the processed image with a modified filename in output directory
             boost::filesystem::path outputFilePath = outputDir / entry.path().filename().replace_extension("_processed.jpg");
             saveImage(image, outputFilePath);
+            cout << "." << endl;
         }
     }
 }
@@ -66,6 +70,7 @@ cv::Mat quantizeColors(const cv::Mat& image) {
     img_quantized /= 64;
     img_quantized *= 64;
     // Return the quantized image
+    cout << "!" << endl;
     return img_quantized;
 }
 

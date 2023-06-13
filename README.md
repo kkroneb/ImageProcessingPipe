@@ -14,7 +14,7 @@ This project is an image processing tool that uses Boost and OpenCV to perform v
 2. Execute:
 ```bash
 docker build -t img-processing-pipe .
-docker build -t img-processing-pipe .
+docker run -v $(pwd)/output:/app/output -it img-processing-pipe
 ```
 
 The pipeline will process all .png and .jpg images in the images directory and save the processed images back to the disk.
