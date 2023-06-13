@@ -1,6 +1,11 @@
 #include <iostream>
+#include "../include/ProcessImage.h"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    
+    processImagesInDirectory("images");
+
     return 0;
 }

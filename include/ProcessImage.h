@@ -22,9 +22,6 @@ cv::Mat enhanceContrast(const cv::Mat& image);
 // reduce noise
 cv::Mat reduceNoise(const cv::Mat& image);
 
-// highlight edges
-cv::Mat highlightEdges(const cv::Mat& image);
-
 // color quantization (reducing the number of colors)
 cv::Mat quantizeColors(const cv::Mat& image);
 
