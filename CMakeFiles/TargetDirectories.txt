@@ -1,0 +1,3 @@
+/home/karl/Schreibtisch/training/ImgProcessingPipe/CMakeFiles/ImgProcessingPipe.dir
+/home/karl/Schreibtisch/training/ImgProcessingPipe/CMakeFiles/edit_cache.dir
+/home/karl/Schreibtisch/training/ImgProcessingPipe/CMakeFiles/rebuild_cache.dir
