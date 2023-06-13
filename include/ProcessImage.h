@@ -5,6 +5,7 @@
 // Libraries
 #include <opencv2/opencv.hpp>  
 #include <boost/filesystem.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 
 /// FUNCTIONS ///
